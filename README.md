@@ -22,7 +22,7 @@ All engineering activities in this workspace strictly adhere to:
 - [`AGENTS.md`](./AGENTS.md): Engineering governance, invariant definitions, and phase gating rules.
 - [`PROJECT_PLAN.md`](./PROJECT_PLAN.md): Multi-phase hackathon execution roadmap and review gates.
 - [`TRACEABILITY_MATRIX.md`](./TRACEABILITY_MATRIX.md): Traceability from requirements to architecture, data, and validation.
-- [`WORKFLOW.md`](./WORKFLOW.md): Team workflow discipline.
+
 
 ---
 
@@ -43,7 +43,6 @@ SALESTORM_TEAM_NAME/
 ├── 12_Presentation/              # Jury pitch deck, defense script, one-pager
 ├── AGENTS.md                     # Engineering governance
 ├── PROJECT_PLAN.md               # Hackathon engineering roadmap
-├── TRACEABILITY_MATRIX.md        # End-to-end requirement traceability
-├── WORKFLOW.md                   # Collaboration and review workflow
+├── TRACEABILITY_MATRIX.md        # End-to-end requirement traceability                  
 └── README.md                     # Root project overview
 ```
