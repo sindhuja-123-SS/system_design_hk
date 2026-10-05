@@ -1,42 +1,49 @@
-# System Design HK 🚀
+# SALESTORM — SYSCRAFTERS 2026 Hackathon
 
-Repository for tracking, designing, and versioning system design tasks, architectures, and implementation milestones.
+## ⚡ High-Scale E-Commerce Flash-Sale Platform
 
----
-
-## 📌 Objectives
-- Document and version system design concepts and architectural diagrams.
-- Track task progress, design decisions, trade-offs, and technical specifications.
-- Maintain structured revisions of system design deliverables.
+This repository contains the architecture, low-level design, data modeling, reliability specifications, and jury defense for the **SALESTORM SYSCRAFTERS 2026** system design hackathon.
 
 ---
 
-## 📁 Repository Structure
+### 🎯 Primary Engineering Challenge
+- **10,000 Concurrent Purchase Requests** hitting a flash-sale item at $T_0$.
+- **100 Available Units** in inventory.
+- **Strict Invariants**:
+  - Zero overselling (Inventory $\ge 0$).
+  - Zero duplicate reservations, payments, or orders.
+  - Reliable end-to-end payment and order state progression under partial failures.
+  - Provable resilience and deterministic recovery from downstream service outages.
+
+---
+
+### 🏛️ Engineering Governance & Operating Model
+All engineering activities in this workspace strictly adhere to:
+- [`AGENTS.md`](./AGENTS.md): Engineering governance, invariant definitions, and phase gating rules.
+- [`PROJECT_PLAN.md`](./PROJECT_PLAN.md): Multi-phase hackathon execution roadmap and review gates.
+- [`TRACEABILITY_MATRIX.md`](./TRACEABILITY_MATRIX.md): Traceability from requirements to architecture, data, and validation.
+- [`WORKFLOW.md`](./WORKFLOW.md): Team workflow discipline.
+
+---
+
+### 📁 Official Submission Structure
 ```text
-system_design_hk/
-├── docs/               # System design documents, architecture specs
-├── diagrams/           # Visual charts, flowcharts, architecture diagrams
-├── tasks/              # Task logs, milestone tracking, and task breakdowns
-├── src/                # Reference implementations or prototypes (if any)
-├── .gitignore          # Ignored files and patterns
-└── README.md           # Project overview and task index
+SALESTORM_TEAM_NAME/
+├── 01_Requirements/              # Requirements register, constraints, invariants
+├── 02_HLD/                       # C4 architecture, end-to-end traffic topology
+├── 03_LLD/                       # UML class diagrams, state machines, sequence flows
+├── 04_Database/                  # Schemas, indexing, concurrency controls, ER models
+├── 05_API/                       # REST/gRPC contracts, async event schemas, idempotency
+├── 06_SOLID/                     # Detailed SOLID design principle mappings
+├── 07_Design_Patterns/           # Distributed & OO design patterns (Saga, Outbox, etc.)
+├── 08_Scalability_Reliability/   # Traffic surge handling, caching, backpressure, DR
+├── 09_Security_Observability/    # Bot defense, auth, metrics, tracing, alerting
+├── 10_ADR/                       # Architecture Decision Records (ADRs)
+├── 11_AI_Assisted_Validation/    # Concurrency verification, failure injection proofs
+├── 12_Presentation/              # Jury pitch deck, defense script, one-pager
+├── AGENTS.md                     # Engineering governance
+├── PROJECT_PLAN.md               # Hackathon engineering roadmap
+├── TRACEABILITY_MATRIX.md        # End-to-end requirement traceability
+├── WORKFLOW.md                   # Collaboration and review workflow
+└── README.md                     # Root project overview
 ```
-
----
-
-## 📋 Task & Milestone Roadmap
-
-| Task ID | Topic / System Component | Status | Target Date | Notes |
-| :--- | :--- | :---: | :---: | :--- |
-| `TASK-01` | Initial Repository Setup & Versioning Baseline | ✅ Completed | 2026-10-05 | Git linked to GitHub |
-| `TASK-02` | Architecture Requirements & Specs | ⏳ Pending | - | - |
-| `TASK-03` | Component Breakdown & Flow Design | ⏳ Pending | - | - |
-
----
-
-## 🛠️ Versioning Workflow
-- **Branching Strategy**: Use feature/task branches (`feature/task-<id>-<name>`) or commit directly to `main` for individual milestone revisions.
-- **Commit Messages**: Follow standard semantic commits:
-  - `feat: add rate limiter design document`
-  - `docs: update TASK-01 progress and architecture notes`
-  - `refactor: revise database schema trade-offs`
