@@ -30,4 +30,5 @@ venv/
 # Temporary / Scratch files
 tmp/
 temp/
+scratch/
 *.log
